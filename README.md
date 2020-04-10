@@ -7,6 +7,8 @@ $ docker system prune -a --volumes
 Remove all container Forcefully:
 ```bash
 docker rm --force $(docker ps -a -q)
+# or
+docker container prune -f
 ```
 Remove all Networks:
 ```bash
@@ -32,9 +34,11 @@ docker rmi $(docker images -f -a -q)
 Remove all stopped containers:
 ```bash
 docker rm $(docker ps -a -q)
+# or 
+docker container prune
 ```
 
 Docker Run and remove  (my-container) container when stopped:
 ```bash
-docker run --rm my-docker
+docker run --rm -it my-docker 
 ```
