@@ -53,6 +53,17 @@ ex:
 ```bash
 ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:2375
 ```
+Run following for applying changes
+```bash
+sudo systemctl daemon-reload
+```
+then 
+```bash
+sudo systemctl restart docker
+# or
+sudo service docker restart
+```
+
 To access remote docker
 ```bash
 export DOCKER_HOST=tcp://0.0.0.0:2375
