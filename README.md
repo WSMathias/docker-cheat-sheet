@@ -42,3 +42,23 @@ Docker Run and remove  (my-container) container when stopped:
 ```bash
 docker run --rm -it my-docker 
 ```
+
+### Remote Docker setup
+Open docker service file
+```bash
+sudo vi /lib/systemd/system/docker.service
+```
+Append `-H tcp://0.0.0.0:2375` to ExecStart value
+ex:
+```bash
+ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:2375
+```
+To access remote docker
+```bash
+export DOCKER_HOST=tcp://0.0.0.0:2375
+docker version
+```
+Unset DOCKER_HOST to use local docker
+```bash
+unset DOCKER_HOST
+```
