@@ -58,7 +58,7 @@ To access remote docker
 export DOCKER_HOST=tcp://0.0.0.0:2375
 docker version
 ```
-Unset DOCKER_HOST to use local docker
-```bash
-unset DOCKER_HOST
-```
+Unset DOCKER_HOST to use local docker again
+
+On VScode setting add `"docker.host": "tcp://0.0.0.0:2375"`
+
