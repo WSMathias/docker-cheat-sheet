@@ -30,6 +30,10 @@ Remove all images:
 ```bash
 docker rmi $(docker images -f -a -q)
 ```
+Remove images with pattern:
+```bash
+docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi
+```
 
 Remove all stopped containers:
 ```bash
