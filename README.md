@@ -46,3 +46,25 @@ docker container prune
 ```bash
 docker run --rm -it my-docker 
 ```
+
+## Additional guides
+
+[Remote Docker setup (over TCP port)][1]  
+[Install Docker using snap][2]  
+[Installing dokcer-compose (linux)][3]  
+
+
+## Other Cheat sheets
+
+[Git][101]  
+[SSH][102]  
+[Docker Compose][103]  
+
+
+[1]: https://gist.github.com/WSMathias/ee53251a5f778756f8ab43fb2c83c33f
+[2]: https://gist.github.com/WSMathias/a3e48b75720a71dd3b7f77717bcae7c1
+[3]: https://gist.github.com/WSMathias/3a0b5e0b68a2f6b32c47b116c8e2e7f6
+
+[101]: https://github.com/WSMathias/Git-Cheat-Sheet/blob/master/README.md
+[102]: https://gist.github.com/WSMathias/ee53251a5f778756f8ab43fb2c83c33f
+[103]: https://gist.github.com/WSMathias/24cf2eed19195497699a2956cb27e1e9
