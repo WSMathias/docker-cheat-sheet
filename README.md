@@ -47,6 +47,18 @@ docker container prune
 docker run --rm -it my-docker 
 ```
 
+#### Acessing Registry (v2) with curl:
+Note: for protected registry basic auth argument`-u username:password`.
+##### List reporistories:
+docker registry ins running  in local container.
+```bash
+curl -X GET http://localhost:5000/v2/_catalog
+```
+##### List tags from a repository:
+```bash
+curl -X GET http://localhost:5000/v2/<repository>/tags/list
+```
+
 ## Additional guides
 
 [Remote Docker setup (over TCP port)][1]  
