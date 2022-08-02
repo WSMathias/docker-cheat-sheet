@@ -36,7 +36,7 @@ docker rmi $(docker images -f -a -q)
 ```bash
 docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi
 ```
-###### explore dockerfile
+###### List dockerfile commands
 ```bash
 docker history --no-trunc <image>
 ```
