@@ -4,12 +4,10 @@
 ```bash
 $ docker system prune -a --volumes
 ```
-##### Remove all container Forcefully:
-```bash
-docker rm --force $(docker ps -a -q)
-# or
-docker container prune -f
-```
+
+
+#### Networks:
+---
 ##### Remove all Networks:
 ```bash
 docker network prune -f
@@ -17,37 +15,54 @@ docker network prune -f
 docker network rm $(docker network ls | grep "bridge" | awk '/ / { print $1 }')
 ```
 
+#### Volumes:
+---
 ##### Remove all dangling volumes:
 ```bash
 docker volume rm $(docker volume ls -qf dangling=true)
 ```
+
+#### Images:
+---
 ##### Remove only dangling images:
 ```bash
 docker rmi $(docker images -f dangling=true -q)
 ```
-
-##### Remove all images:
+###### Remove all images:
 ```bash
 docker rmi $(docker images -f -a -q)
 ```
-##### Remove images with pattern:
+###### Remove images with pattern:
 ```bash
 docker images -a | grep "pattern" | awk '{print $3}' | xargs docker rmi
 ```
+###### explore dockerfile
+```bash
+docker history --no-trunc <image>
+```
 
+#### Containers:
+---
 ##### Remove all stopped containers:
 ```bash
 docker rm $(docker ps -a -q)
 # or 
 docker container prune
 ```
-
 ##### Docker Run and remove  (my-container) container when stopped:
 ```bash
 docker run --rm -it my-docker 
 ```
+##### Remove all container Forcefully:
+```bash
+docker rm --force $(docker ps -a -q)
+# or
+docker container prune -f
+```
 
-#### Acessing Registry (v2) with curl:
+#### Registry:
+---
+##### Acessing Registry (v2) with curl:
 Note: for protected registry basic auth argument`-u username:password`.
 ##### List reporistories:
 docker registry ins running  in local container.
