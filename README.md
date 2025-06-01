@@ -95,7 +95,10 @@ curl -X GET http://localhost:5000/v2/<repository>/tags/list
 
 [Git][101]  
 [SSH][102]  
-[Docker Compose][103]  
+[Docker Compose][103]
+
+## References
+- [Official Docker Documentation][201]
 
 
 [1]: https://gist.github.com/WSMathias/ee53251a5f778756f8ab43fb2c83c33f
@@ -105,3 +108,5 @@ curl -X GET http://localhost:5000/v2/<repository>/tags/list
 [101]: https://github.com/WSMathias/Git-Cheat-Sheet/blob/master/README.md
 [102]: https://gist.github.com/WSMathias/ee53251a5f778756f8ab43fb2c83c33f
 [103]: https://gist.github.com/WSMathias/24cf2eed19195497699a2956cb27e1e9
+
+[201]: https://docs.docker.com/reference/cli/docker/
