@@ -1,8 +1,8 @@
 # docker-cheat-sheet
 
-##### Best way to clean docker safely:
+##### Best way to clean up Docker data safely:
 ```bash
-$ docker system prune -a --volumes
+docker system prune -a --volumes
 ```
 
 
@@ -11,7 +11,9 @@ $ docker system prune -a --volumes
 ##### Remove all Networks:
 ```bash
 docker network prune -f
-# or
+```
+or
+```bash
 docker network rm $(docker network ls | grep "bridge" | awk '/ / { print $1 }')
 ```
 
@@ -46,26 +48,34 @@ docker history --no-trunc <image>
 ##### Remove all stopped containers:
 ```bash
 docker rm $(docker ps -a -q)
-# or 
+```
+or
+```bash
 docker container prune
 ```
 ##### Docker Run and remove  (my-container) container when stopped:
 ```bash
 docker run --rm -it my-docker 
 ```
-##### Remove all container Forcefully:
+##### Remove all containers forcefully:
 ```bash
 docker rm --force $(docker ps -a -q)
-# or
+```
+or
+```bash
 docker container prune -f
+```
+#### Exec inside a container
+```bash
+docker exec -it <container_name|contianer_id> bash
 ```
 
 #### Registry:
 ---
 ##### Acessing Registry (v2) with curl:
-Note: for protected registry basic auth argument`-u username:password`.
-##### List reporistories:
-docker registry ins running  in local container.
+Note: for protected registry, basic auth argument `username:password`.
+##### List repositories:
+Docker registry is running in a local container.
 ```bash
 curl -X GET http://localhost:5000/v2/_catalog
 ```
@@ -81,7 +91,7 @@ curl -X GET http://localhost:5000/v2/<repository>/tags/list
 [Installing dokcer-compose (linux)][3]  
 
 
-## Other Cheat sheets
+## Other Cheat Sheets
 
 [Git][101]  
 [SSH][102]  
